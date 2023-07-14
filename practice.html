@@ -1,0 +1,67 @@
+<html>
+<head>
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<script src="jquery-3.6.1.min.js"></script>
+</head>
+<body>
+	
+	<h1 style="padding-top:100px">validation form</h1>
+	<div class="container" style="padding-top:30px">
+		<form>
+			<label>Name :- </label>
+			<input type = "text"  id = "name_id" class = "form-control">
+			<h5 id=unamecheck style="color:red;">**user name is not valid.</h5><br>
+			<label>Password :- </label>
+			<input type = "text" id = "pass_id" class = "form-control">
+			<h5 id=passcheck style="color:red;">**Password is not valid.</h5><br>
+			<label>Conpass :- </label>
+			<input type = "text"  id = "conpass_id"class = "form-control">
+			<h5 id=conpasscheck style="color:red;">**Password did not match.</h5><br>
+			<input type = "submit" id = "submit_id" value = "submit" class="btn- btn-primary">
+		</form>
+		</div>
+	
+	<script>
+		$(document).ready(function(){
+			$("#unamecheck").hide();
+			$("#passcheck").hide();
+			$("#conpasscheck").hide();
+			
+			var user_err = true;
+			var pass_err = true;
+			var conpass = true;
+			
+			$("#name_id").keyup(function(){
+				username_check();
+			});
+			
+			function username_check(){
+				var userval = $("#name_id").val();
+				if(userval.length == ""){
+					$("#unamecheck").show();
+					user_err = false; 
+				}
+				else{
+					$("#unamecheck").hide();
+				}
+			}
+			
+			$("pass_id").keyup(function(){
+				pass_check();
+			});
+			
+			function pass_check(){
+				var passval = $(pass_id).val();
+				if (passval.length<3||passval.length>10)
+				{
+					$("#passcheck").show();
+					pass_err = false;
+				}
+				else{
+					$("#passcheck").hide();
+				}
+			}
+	});
+	</script>
+</body>
+</html>

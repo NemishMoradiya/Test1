@@ -1,0 +1,58 @@
+<html>
+<head>
+	<script src="jquery-3.6.1.min.js"></script>
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<style>
+		body{
+			background: linear-gradient( #33ccff 0%,#ff99cc 100%);
+	</style>
+
+</head>
+<body>
+	<br><br>
+	<center><h2 style="color:gray;">Registration Form</h2></center>
+	<div claSS="container"><br><br>
+		<form>
+			<div class="form_group">
+				<label for="uname">User Name:-</label>
+				<input type="text" id="txtname" class="form-control">
+				<h5 id="usercheck" style="color:red;">User Name Is Muissing.</h5>
+			</div>
+			
+			<div class="form_group">
+				<label for="email">Email:-</label>
+				<input type="email" id="email" class="form-control">
+				<h5 id="emailcheck" style="color:red;">Email Is Invalid.</h5>
+			</div>
+			
+			<div class="form_group">
+				<label for="password">password:-</label>
+				<input type="password" id="password" class="form-control">
+				<h5 id="passcheck" style="color:red;">Fill The Password.</h5>
+			</div>
+			
+			<div class="form_group">
+				<label for="uname">User Name:-</label>
+				<input type="password" id="conpassword" class="form-control">
+				<h5 id="conpasscheck" style="color:red;">Password Didn't Match.</h5>
+			</div>
+		</form>	
+		</div>
+</body>
+</html>
+<script>
+	$(document).ready(function()
+	{
+		$("#usercheck").hide()
+		$("#txtname").keyup(function()
+		{
+			validateuname();
+		});
+	});
+	function validateuname()
+	{
+	
+	}
+
+
+</script>

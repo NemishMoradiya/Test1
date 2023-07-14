@@ -1,0 +1,114 @@
+<html>
+<head>
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<script src="jquery-3.6.1.min.js"></script>
+	<style>
+		body{
+			background: linear-gradient( #33ccff 0%,#ff99cc 100%);
+		}
+	</style>
+</head>
+<body>
+	<marquee><center><h3> welcome to vvk collage</h3></center></marquee>
+	<div class="container">
+	<form>
+		<div class="form_group">
+			<label for="uname">username</label>
+			<input type="text" id="txtname" class="form-control">
+			<h5 id="usercheck" style="color:red;">Username is missing</h5>
+		</div>
+		<div>
+			<label for="email">email</label>
+			<input type="email" id="email" class="form-control">
+			<h5 id="emailvalid" style="color:red;">Your email must be valid</h5>
+		</div>
+		<div class ="foem_group">
+			<label for="password">password</label>
+			<input type="password" id="password" class="form-control">
+			<h5 id="passcheck" style="color:red;">plese fill the password</h5>
+		</div>
+		<div class ="foem_group">
+			<label for="conpassword">Conform password</label>
+			<input type="password" id="conpassword" class="form-control">
+			<h5 id="conpasscheck" style="color:red;">password didn't match</h5>
+		</div>
+		<input type="submit" id ="btnsubmit" class="btn btn-danger">		
+	</form>
+	</div>
+</body>
+</html>	
+<script>
+	$(document).ready(function()
+	{
+		$("#usercheck").hide();
+		$("#txtname").keyup(function()
+		{
+			validateuname();
+		});	
+	});
+	function validateuname()
+	{
+		var uservalue=$("#txtname").val();
+		if(uservalue.length=="")
+		{
+			$("#usercheck").show();	
+			unameerr=false;
+			return false;		
+		}
+		else if(uservalue.length<3||uservalue.length>10)
+		{
+			$("#usercheck").show();
+			$("#usercheck").html("uname is must be 3 to 10");
+			unameerr=false;
+			return false;
+		}
+		else
+		{
+			$("#usercheck").hide();
+		}
+	}
+	
+	
+	$(document).ready(function()
+	{
+		$("#passcheck").hide();
+		unameerrr=true;
+		$("#password").keyup(function()
+		{
+			validateunamee();
+		});	
+	});
+	function validateunamee()
+	{
+		var uservalue=$("#password").val();
+		if(uservalue.length=="")
+		{
+			$("#passcheck").show();
+			unameerrr=false;
+			return false;
+		}
+		else if(uservalue.length<8||uservalue.length>16)
+		{
+			$("#passcheck").show();
+			$("#passcheck").html("password is must be 8 to 16");
+			unameerrr=false;
+			return false;
+		}
+		else
+		{
+			$("#passcheck").hide();
+		}
+		
+	}
+	$("#email").hide();
+	let emailerr=true;
+	$("#email").keyup(function()
+	{
+		validateemail();
+	)};
+	function validateemail()
+	{
+		let regex=/^([a-zA-Z\d\.\-]+)@([a-zA-Z]+).([a-zA-Z]{2-8})$/;
+		let emailvalue = $("#email").val();
+	}	
+</script>
